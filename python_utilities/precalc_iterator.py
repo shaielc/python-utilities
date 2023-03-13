@@ -4,6 +4,8 @@ from concurrent.futures import ThreadPoolExecutor
 def _next_iter(iter):
     return next(iter)
 
+# TODO: executor should be a parameter
+# TODO: add docs
 def threaded_iterator(iter):
     with ThreadPoolExecutor() as e:
         f = e.submit(_next_iter, iter)
